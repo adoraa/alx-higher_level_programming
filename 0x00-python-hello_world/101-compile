@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "Compiling $pyfile ..."
+echo "Compiling $PYFILE ..."
 python3 -m py_compile "$PYFILE"
 mv __pycache__/"${pyfile%.py}.pyc"
 rm -rf __pycache__
+echo "$(ls -1 | grep -c ".pyc")"
