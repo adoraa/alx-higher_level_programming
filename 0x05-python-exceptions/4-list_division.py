@@ -13,6 +13,6 @@ def list_division(my_list_1, my_list_2, list_length):
         except (TypeError, ValueError):
             print("wrong type")
             quotient = 0
-	finally:
+        finally:
             result.append(quotient)
     return result
