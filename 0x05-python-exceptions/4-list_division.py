@@ -4,14 +4,15 @@ def list_division(my_list_1, my_list_2, list_length):
     for i in range(list_length):
         try:
             quotient = my_list_1[i] / my_list_2[i]
-        except ZeroDivisionError:
+        except (ZeroDivisionError, ValueError):
             print("division by 0")
             quotient = 0
-        except IndexError:
+        except (IndexError, ValueError):
             print("out of range")
             quotient = 0
         except (TypeError, ValueError):
             print("wrong type")
             quotient = 0
-        result.append(quotient)
+	finally:
+            result.append(quotient)
     return result
