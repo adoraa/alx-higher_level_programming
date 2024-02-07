@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Python ByteCode replica"""
+
 import math
 
 
