@@ -1,0 +1,9 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("This is a simple test. How does it handle? Well, let's check: It should print each sentence on a new line.")
+This is a simple test.$
+$
+How does it handle?$
+$
+Well, let's check:$
+$
+It should print each sentence on a new line.
