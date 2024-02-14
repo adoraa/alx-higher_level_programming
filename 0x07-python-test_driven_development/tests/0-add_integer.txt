@@ -1,15 +1,38 @@
-#!/usr/bin/python3
-from __import__('0-add_integer').add_integer
+The ``0-add_integer`` module
+======================
 
-print(add_integer(1, 2))
-print(add_integer(100, -2))
-print(add_integer(2))
-print(add_integer(100.3, -2))
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)
+Using ``add_integer``
+-------------------
+
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Checking for module docstring:
+	 >>> m = __import__("0-add_integer").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("0-add_integer").add_integer.__doc__
+         >>> len(f) > 1
+         True
+
+Checking regular addition:
+         >>> add_integer(1, 2)
+         3
+
+Checking negative with positive:
+         >>> add_integer(-5, 5)
+         0
+
+Checking float with int:
+         >>> add_integer(10.5, 2)
+         12
+
+Checking both float:
+         >>> add_integer(3.5, 7.7)
+         10
+
+Checking -ve float with +ve int:
+         >>> add_integer(-5.5, 2.5)
+         -3
