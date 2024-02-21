@@ -22,7 +22,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attr=None):
         """
         Retrieves a dictionary representation of a Student instance.
 
@@ -32,4 +32,17 @@ class Student:
         Returns:
             dict: The dictionary representation of the Student instance.
         """
-        return self.__dict__
+        if attr is not None:
+            res = {k: self.__dict__[k] for k in self.__dict__.keys() & attr}
+            return res
+        else:
+            return self.__dict__
+
+    def reload_from_json(self, json):
+        """
+            replaces all attributes of the Student Instance.
+            Args:
+                json (dictionary): reload data.
+        """
+        for key, value in json.items():
+            self.__setattr__(key, value)
