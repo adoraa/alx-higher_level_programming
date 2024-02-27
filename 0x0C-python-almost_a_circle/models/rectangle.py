@@ -87,8 +87,12 @@ class Rectangle(Base):
         wScale = "{{{}/{}}}".format(self.__width, self.__height)
         return ("[Rectangle] ({}) {} - {}".format(self.id, origin, wScale))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle attributes."""
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for attr, value in zip(attributes, args):
-            setattr(self, attr, value)
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
