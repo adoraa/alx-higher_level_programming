@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Rectangle module."""
+import csv
 from models.base import Base
 
 
@@ -106,3 +107,32 @@ class Rectangle(Base):
             'x': self.__x,
             'y': self.__y
         }
+
+    def to_csv_row(self):
+        """Convert object to CSV row."""
+        return [self.id, self.width, self.height, self.x, self.y]
+
+    @classmethod
+    def from_csv_row(cls, row):
+        """Create object from CSV row."""
+        id, width, height, x, y = map(int, row)
+        return cls(width, height, x, y, id)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, "w") as file:
+            csv_writer = csv.writer(file)
+            for obj in list_objs:
+                csv_writer.writerow(obj.to_csv_row())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = "{}.csv".format(cls.__name__)
+        try:
+            with open(filename, "r") as file:
+                csv_reader = csv.reader(file)
+                list_objs = [cls.from_csv_row(row) for row in csv_reader]
+                return list_objs
+        except FileNotFoundError:
+            return []
