@@ -28,6 +28,10 @@ This repository contains SQL scripts for introductory exercises. Each script per
 15. **14-average.sql**: Computes the score average of all records in the `second_table` of the `hbtn_0c_0` database.
 16. **15-groups.sql**: Lists the number of records with the same score in the `second_table` of the `hbtn_0c_0` database.
 17. **16-no_link.sql**: Lists all records of the `second_table` of the `hbtn_0c_0` database, filtering out rows without a name value, ordered by descending score.
+18. **100-move_to_utf8.sql**: Converts the database `hbtn_0c_0`, the table `first_table`, and the field `name` in `first_table` to UTF8 (utf8mb4, collate utf8mb4_unicode_ci).
+19. **101-avg_temperatures.sql**: Displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
+20. **102-top_city.sql**: Displays the top 3 of cities' temperature during July and August ordered by temperature (descending).
+21. **103-max_state.sql**: Displays the max temperature of each state ordered by State name.
 
 ## Usage
 
