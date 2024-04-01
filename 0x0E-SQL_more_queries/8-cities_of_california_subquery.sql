@@ -1,5 +1,5 @@
 -- Select all cities of California using a subquery
-SELECT * 
+SELECT id, name 
 FROM cities
 WHERE state_id = (
     SELECT id 
