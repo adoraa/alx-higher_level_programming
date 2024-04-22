@@ -1,9 +1,6 @@
 #!/usr/bin/node
 function factorial (n) {
-  if (isNaN(n) || n < 2)
-    return 1;
-  else
-    return n * factorial(n - 1);
+  if (isNaN(n) || n < 2) { return 1; } else { return n * factorial(n - 1); }
 }
 
 const num = process.argv[2];
