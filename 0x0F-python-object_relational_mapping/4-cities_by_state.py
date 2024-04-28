@@ -20,7 +20,6 @@ if __name__ == "__main__":
                     JOIN states ON cities.state_id = states.id \
                         ORDER BY cities.id ASC")
 
-    for row in cursor.fetchall():
+    row = cursor.fetchall()
+    for row in rows:
         print(row)
-    cursor.close()
-    db.close()
