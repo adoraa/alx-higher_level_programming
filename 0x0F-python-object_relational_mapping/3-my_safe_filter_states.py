@@ -21,7 +21,6 @@ if __name__ == "__main__":
     cursor.execute("SELECT * FROM states WHERE name=%s\
                 ORDER BY states.id ASC", (state_name,))
 
-    for row in cursor.fetchall():
+    row = cursor.fetchall()
+    for row in rows:
         print(row)
-    cursor.close()
-    db.close()
