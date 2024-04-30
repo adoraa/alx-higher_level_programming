@@ -15,10 +15,12 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    cursor = db.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name
+    cur = db.cursor()
+    cur.execute("""SELECT * FROM states WHERE name
                   LIKE 'N%' ORDER BY states.id ASC""")
 
-    row = cursor.fetchall()
+    rows = cur.fetchall()
     for row in rows:
         print(row)
+    cur.close()
+    db.close()
